@@ -17,12 +17,17 @@ namespace SeleniumLearning
         {
             new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
             driver=new ChromeDriver();
+            driver.Manage().Window.Maximize();
 
         }
         [Test]
         public void Test1()
         {
-            driver.Url = "https://rahulshettyacademy.com/";
+            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
+            TestContext.Progress.WriteLine("Url :"+driver.Url);
+            TestContext.Progress.WriteLine("Title :"+driver.Title);
+            driver.Close();
+            driver.Quit();
         }
     }
 }
