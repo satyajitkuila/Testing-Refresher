@@ -105,3 +105,4 @@ D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\obj\D
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\AngleSharp.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\WebDriverManager.dll
+D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\SeleniumExtras.WaitHelpers.dll

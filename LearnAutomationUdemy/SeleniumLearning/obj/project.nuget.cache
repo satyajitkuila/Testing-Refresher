@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "I8LIwQVtpbHNd1nhrSvd4W+PkRwG9XdJjhV2ELvVjVrLu5VwpLMnWAivSO7ipVVeO/vV+Fvkq+BivQGetOldIQ==",
+  "dgSpecHash": "d0fy6gdToLgEg1Y0XyFqScg/pcHzm1yVuIPgobRerzhPf3Elyqk1l5HMD+Drt6cIZa9LuTdnrGxyROeG7tLGcg==",
   "success": true,
   "projectFilePath": "D:\\VS Studio Files\\Testing Refresher\\LearnAutomationUdemy\\SeleniumLearning\\SeleniumLearning.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\anglesharp\\1.1.0\\anglesharp.1.1.0.nupkg.sha512",
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\satyajit.kuila\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\microsoft.net.test.sdk\\17.1.0\\microsoft.net.test.sdk.17.1.0.nupkg.sha512",
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
