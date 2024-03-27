@@ -35,7 +35,10 @@ namespace SeleniumLearning
 
             driver.SwitchTo().Frame("courses-iframe");
             driver.FindElement(By.LinkText("All Access Plan")).Click();
-
+            TestContext.Progress.WriteLine(driver.FindElement(By.CssSelector("h1")).Text);
+            //exit the frame
+            driver.SwitchTo().DefaultContent();
+            TestContext.Progress.WriteLine(driver.FindElement(By.CssSelector("h1")).Text);
 
         }
 

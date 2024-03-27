@@ -30,6 +30,7 @@ namespace SeleniumLearning
         public void EndToEndFlow()
         {
             String[] expectedproducts = { "iphone X", "Blackberry" };
+            String[] actualproducts = new String[2];
 
             driver.FindElement(By.Id("username")).SendKeys("rahulshettyacademy");
             driver.FindElement(By.Name("password")).SendKeys("learning");
@@ -51,6 +52,13 @@ namespace SeleniumLearning
                 }
             }
             driver.FindElement(By.PartialLinkText("Checkout")).Click();
+
+            IList <IWebElement> checkoutcards= driver.FindElements(By.XPath("//div/h4"));
+            for (int i = 0; i < checkoutcards.Count; i++)
+            {
+                actualproducts[i] = checkoutcards[i].Text;
+            }
+            Assert.AreEqual(expectedproducts,actualproducts);
         }
     }
 }
