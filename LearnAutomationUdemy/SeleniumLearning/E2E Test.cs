@@ -59,6 +59,21 @@ namespace SeleniumLearning
                 actualproducts[i] = checkoutcards[i].Text;
             }
             Assert.AreEqual(expectedproducts,actualproducts);
+
+            driver.FindElement(By.XPath("//button[normalize-space(text())='Checkout']")).Click();
+            driver.FindElement(By.XPath("//input[@id='country']")).SendKeys("ind");
+
+            
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//a[text()='India']")));
+            driver.FindElement(By.XPath("//a[text()='India']")).Click();
+            driver.FindElement(By.XPath("//label[@for='checkbox2']")).Click();
+            driver.FindElement(By.XPath("//input[@value='Purchase']")).Click();
+
+            String actMessage = driver.FindElement(By.XPath("//div[@class='alert alert-success alert-dismissible']")).Text;
+
+            StringAssert.Contains("Success", actMessage);
+
+
         }
     }
 }
