@@ -1,0 +1,10 @@
+{
+  "username": "rahulshettyacademy",
+  "password": "learning",
+  "country" : "ind",
+  "username_wrong": "rahulshetty",
+  "password_wrong": "learning",
+  "country_wrong": "ind",
+
+  "products": [ "iphone X", "Blackberry" ]
+}

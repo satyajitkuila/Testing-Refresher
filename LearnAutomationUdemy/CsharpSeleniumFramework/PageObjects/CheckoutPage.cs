@@ -10,7 +10,7 @@ namespace CsharpSeleniumFramework.PageObjects
 {
     public class CheckoutPage
     {
-        private IWebDriver driver;
+        IWebDriver driver;
 
         public CheckoutPage(IWebDriver driver)
         {

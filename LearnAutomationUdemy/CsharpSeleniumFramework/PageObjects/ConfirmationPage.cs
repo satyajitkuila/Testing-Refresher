@@ -11,7 +11,7 @@ namespace CsharpSeleniumFramework.PageObjects
 {
     public class ConfirmationPage
     {
-        private IWebDriver driver;
+        IWebDriver driver;
 
         public ConfirmationPage(IWebDriver driver)
         {
