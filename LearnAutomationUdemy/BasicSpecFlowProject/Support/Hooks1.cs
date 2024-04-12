@@ -1,4 +1,5 @@
 ﻿using BasicSpecFlowProject.Drivers;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using TechTalk.SpecFlow;
@@ -23,6 +24,15 @@ namespace BasicSpecFlowProject.Support
             new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
+
+            /*// Set the path to the ChromeDriver executable
+            ChromeOptions options = new ChromeOptions();
+
+            // Add headless argument
+            options.AddArgument("--headless");
+
+            // Initialize ChromeDriver with options
+            driver = new ChromeDriver(options);*/
         }
         
 

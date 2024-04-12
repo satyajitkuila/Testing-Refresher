@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace BasicSpecFlowProject.PageObjects
     public class LoginPage
     {
         private IWebDriver driver;
+        
         public LoginPage(IWebDriver driver)
         {
             this.driver = driver;
@@ -45,14 +47,14 @@ namespace BasicSpecFlowProject.PageObjects
         private IWebElement Clicklogin;
 
 
-
-
         public IWebElement getClosebanner()
         {
+            
             return Closebanner;
         }
         public IWebElement getclickFrame()
         {
+            
             return clickFrame;
         } 
         

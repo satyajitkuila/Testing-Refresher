@@ -30,7 +30,7 @@ namespace BasicSpecFlowProject.Features
         private static string[] featureTags = new string[] {
                 "Chrome"};
         
-#line 1 "mmtBooking.feature"
+#line 1 "mmtLogin.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
