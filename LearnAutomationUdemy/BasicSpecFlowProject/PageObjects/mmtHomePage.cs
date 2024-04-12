@@ -32,8 +32,11 @@ namespace BasicSpecFlowProject.PageObjects
         [FindsBy(How = How.XPath, Using = "//li[@role=\"option\"]")]
         private IList<IWebElement> fetchToDropdownList;
 
-        [FindsBy(How = How.XPath, Using = "//input[@class=\"DayPicker-Month\"")]
+        [FindsBy(How = How.XPath, Using = "//div[@class=\"DayPicker-Month\"]")]
         private IList<IWebElement> fetchMonthsDisplayed;
+        
+        [FindsBy(How = How.XPath, Using = "//span[@class=\"DayPicker-NavButton DayPicker-NavButton--next\"]")]
+        private IWebElement clickNextSetMonth;
 
         public IWebElement getClickFrom()
         {
@@ -46,6 +49,10 @@ namespace BasicSpecFlowProject.PageObjects
         public IList<IWebElement> GetFromDropdownSuggestions()
         {
             return fetchFromDropdownList;
+        }
+        public IList<IWebElement> GetfetchMonthsDisplayed()
+        {
+            return fetchMonthsDisplayed;
         }
         
         public IWebElement getclickTo()
@@ -60,6 +67,10 @@ namespace BasicSpecFlowProject.PageObjects
         {
             return fetchToDropdownList;
         }
-        
+
+        public IWebElement getclickNextSetMonth()
+        {
+            return clickNextSetMonth;
+        }
     }
 }

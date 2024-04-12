@@ -28,10 +28,9 @@ namespace BasicSpecFlowProject.StepDefinitions
             mhp.getClickFrom().Click();
             mhp.getenterFrom().SendKeys(src);
             Thread.Sleep(10000);
+
             //entering From field
-            IList<IWebElement> optionListfrom=mhp.GetFromDropdownSuggestions();
-            Console.WriteLine(optionListfrom[0].Text);
-            foreach (IWebElement option in optionListfrom)
+            foreach (IWebElement option in mhp.GetFromDropdownSuggestions())
             {
                 if (option.Text.Contains( src))
                 {
@@ -41,19 +40,41 @@ namespace BasicSpecFlowProject.StepDefinitions
                 }
             }
             Thread.Sleep(10000);
+
             //entering To field
             mhp.getclickTo().Click();
             mhp.getenterTo().SendKeys(dst);
             Thread.Sleep(10000);
-            IList<IWebElement> optionListTo = mhp.GetToDropdownSuggestions();
-            Console.WriteLine(optionListTo[0].Text);
-            foreach (IWebElement option in optionListTo)
+            foreach (IWebElement option in mhp.GetToDropdownSuggestions())
             {
                 if (option.Text.Contains(dst))
                 {
                     option.Click();
                     Console.WriteLine("i am in loop");
                     break;
+                }
+            }
+
+            //Selecting the date from date picker
+            string[] parts = date.Split('-');
+            string year = parts[0];
+            string month = parts[1];
+            string monthName = new DateTime(Convert.ToInt32(year), Convert.ToInt32(month), 1).ToString("MMMM");
+            string day = parts[2]; 
+            Console.WriteLine(monthName + " " + day);
+
+            foreach (IWebElement option in mhp.GetfetchMonthsDisplayed())
+            {
+                if (option.Text.Contains(monthName))
+                {
+                    Console.WriteLine("i am in month loop");
+
+
+                    break;
+                }
+                else
+                {
+                    mhp.getclickNextSetMonth().Click();
                 }
             }
         }
