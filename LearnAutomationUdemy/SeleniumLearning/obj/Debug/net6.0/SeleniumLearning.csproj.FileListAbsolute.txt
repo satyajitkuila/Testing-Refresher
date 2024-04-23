@@ -14,6 +14,8 @@ D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\D
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\SeleniumLearning.runtimeconfig.json
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\SeleniumLearning.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\SeleniumLearning.pdb
+D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\AngleSharp.dll
+D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\SeleniumExtras.WaitHelpers.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\Microsoft.TestPlatform.CoreUtilities.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
@@ -26,6 +28,8 @@ D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\D
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\nunit.framework.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\WebDriver.Support.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\WebDriver.dll
+D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
+D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\WebDriverManager.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
@@ -102,7 +106,3 @@ D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\obj\D
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\obj\Debug\net6.0\SeleniumLearning.pdb
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\obj\Debug\net6.0\SeleniumLearning.genruntimeconfig.cache
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\obj\Debug\net6.0\ref\SeleniumLearning.dll
-D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\AngleSharp.dll
-D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
-D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\WebDriverManager.dll
-D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\SeleniumLearning\bin\Debug\net6.0\SeleniumExtras.WaitHelpers.dll

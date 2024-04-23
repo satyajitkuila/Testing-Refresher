@@ -81,6 +81,10 @@
               "target": "Package",
               "version": "[3.9.74, )"
             },
+            "SpecFlow.ExternalData": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
             "SpecFlow.NUnit": {
               "target": "Package",
               "version": "[3.9.74, )"

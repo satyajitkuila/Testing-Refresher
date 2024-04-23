@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WGzqN5WalAugWkzlHE1QgUbUbth6ph5flsH5uLdpC35P0j/t28DaFQ6DwrD3pU72YdwaEhhzqOjXEabruKmbIQ==",
+  "dgSpecHash": "RNjUmZOM2HdzD4GtL0g3DdKQI8o2MEskruL1pQ/8UpAw0ikFyGasjujncKcEWwf8uO2wEDq0JqYkzmD0yN7LwQ==",
   "success": true,
   "projectFilePath": "D:\\VS Studio Files\\Testing Refresher\\LearnAutomationUdemy\\BasicSpecFlowProject\\BasicSpecFlowProject.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,7 @@
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\selenium.webdriver\\4.19.0\\selenium.webdriver.4.19.0.nupkg.sha512",
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\sharpziplib\\1.4.2\\sharpziplib.1.4.2.nupkg.sha512",
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\specflow\\3.9.74\\specflow.3.9.74.nupkg.sha512",
+    "C:\\Users\\satyajit.kuila\\.nuget\\packages\\specflow.externaldata\\3.9.74\\specflow.externaldata.3.9.74.nupkg.sha512",
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\specflow.internal.json\\1.0.8\\specflow.internal.json.1.0.8.nupkg.sha512",
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\specflow.nunit\\3.9.74\\specflow.nunit.3.9.74.nupkg.sha512",
     "C:\\Users\\satyajit.kuila\\.nuget\\packages\\specflow.plus.livingdocplugin\\3.9.57\\specflow.plus.livingdocplugin.3.9.57.nupkg.sha512",
