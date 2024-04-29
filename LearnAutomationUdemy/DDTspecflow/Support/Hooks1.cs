@@ -1,5 +1,10 @@
-﻿using DDTspecflow.Drivers;
+﻿using AventStack.ExtentReports;
+using AventStack.ExtentReports.Gherkin.Model;
+using AventStack.ExtentReports.Reporter;
+using DDTspecflow.Drivers;
+using Gherkin.CucumberMessages.Types;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
@@ -9,48 +14,128 @@ using System.Configuration;
 using TechTalk.SpecFlow;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
+using Feature = AventStack.ExtentReports.Gherkin.Model.Feature;
+using Scenario = AventStack.ExtentReports.Gherkin.Model.Scenario;
 
 namespace DDTspecflow.Support
 {
     [Binding]
     public sealed class Hooks1:Base
     {
-        
-        String browserName;
+        private static ExtentTest featureName;
+        private static ExtentTest scenario;
+        private static ExtentReports extent;
 
-        [BeforeScenario]
-        public void StartBrowser()
+        [BeforeTestRun]
+        public static void Setup()
         {
             String browserName = ConfigurationManager.AppSettings["browser1"];
             InitBrowser(browserName);
-            // Set implicit wait
-            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Manage().Window.Maximize();
+
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            String reportPath = projectDirectory + "//index.html";
+            var htmlReporter = new ExtentSparkReporter(reportPath);
+            extent = new ExtentReports();
+            extent.AttachReporter(htmlReporter);
+            extent.AddSystemInfo("Host Name", "Local host");
+            extent.AddSystemInfo("Environment", "QA1");
+            extent.AddSystemInfo("Username", "Satyajit Kuila");
         }
 
-        public void InitBrowser(string browserName)
+        [BeforeFeature]
+        public static void BeforeFeature()
         {
-            switch (browserName)
+            //Create dynamic feature name
+            featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
+            Console.WriteLine("BeforeFeature");
+        }
+        [BeforeScenario]
+        public void BeforeScenario()
+        {
+            Console.WriteLine("BeforeScenario");
+            scenario = featureName.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
+
+        }
+        [AfterStep]
+        public void InsertReportingSteps()
+        {
+            var stepType = ScenarioStepContext.Current.StepInfo.StepDefinitionType.ToString();
+            if (ScenarioContext.Current.TestError == null)
             {
-                case "Firefox":
-                    driver = new FirefoxDriver();
-                    break;
-                case "Chrome":
-                    driver = new ChromeDriver();
-                    break;
-                case "Edge":
-                    driver = new EdgeDriver();
-                    break;
-                default:
-                    throw new NotSupportedException($"Browser '{browserName}' is not supported.");
+
+                if (stepType == "Given")
+                {
+                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
+
+                }
+                else if (stepType == "When")
+                {
+                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text);
+
+                }
+
+                else if (stepType == "Then")
+                {
+                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text);
+
+                }
+
+                else if (stepType == "And")
+                {
+                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text);
+
+                }
+
+            }
+            else if (ScenarioContext.Current.TestError != null)
+            {
+                String fileName= TakeScreenshot();
+                Console.WriteLine(fileName);
+                if (stepType == "Given")
+                {
+
+                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text)
+                        .Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(fileName); 
+                }
+                else if (stepType == "When")
+                {
+                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text)
+                        .Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(fileName);
+                    
+                }
+                else if (stepType == "Then")
+                {
+                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).
+                        Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(fileName);
+                }
+                else if (stepType == "And")
+                {
+                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text)
+                        .Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(fileName);
+                    
+                }
             }
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            // Quit the driver after scenario execution
-         //  driver.Quit();
+            Console.WriteLine("AfterScenario");
+
+            //implement logic that has to run after executing each scenario
+        }
+
+        [AfterTestRun]
+        public static void AfterTestRun()
+        {
+            driver.Close();
+            driver.Dispose();
+            //kill the browser
+            //Flush report once test completes
+            extent.Flush();
+
         }
     }
 }

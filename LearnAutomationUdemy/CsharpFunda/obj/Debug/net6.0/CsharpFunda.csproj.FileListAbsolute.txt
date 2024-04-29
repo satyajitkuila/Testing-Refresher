@@ -19,3 +19,4 @@ D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\CsharpFunda\obj\Debug\
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\CsharpFunda\obj\Debug\net6.0\CsharpFunda.pdb
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\CsharpFunda\obj\Debug\net6.0\CsharpFunda.genruntimeconfig.cache
 D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\CsharpFunda\obj\Debug\net6.0\ref\CsharpFunda.dll
+D:\VS Studio Files\Testing Refresher\LearnAutomationUdemy\CsharpFunda\bin\Debug\net6.0\nunit.framework.dll

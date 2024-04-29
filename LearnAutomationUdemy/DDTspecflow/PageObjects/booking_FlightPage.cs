@@ -44,6 +44,23 @@ namespace DDTspecflow.PageObjects
         [FindsBy(How = How.XPath, Using = "//span[@class=\"List-module__content___a0FlE\"]")]
         private IList<IWebElement> flighToSugsttList;
 
+        /*Elements for the Date selection*/
+        [FindsBy(How = How.XPath, Using = "//button[@placeholder=\"Choose departure date\"]")]
+        private IWebElement flighDateClick;        
+        [FindsBy(How = How.XPath, Using = "//div[@class=\"Calendar-module__monthWrapper___n+yfx\"]")]
+        private IList<IWebElement> flighDateMenu;
+        [FindsBy(How = How.XPath, Using = "//span[@data-date]")]
+        private IList<IWebElement> flighDatePick;
+        [FindsBy(How = How.XPath, Using = "/html[1]/body[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]/span[1]/span[1]/*[name()='svg'][1]")]
+        private IWebElement flighDateNxtMenu;
+
+        /*Elements for the search selection*/
+        [FindsBy(How = How.XPath, Using = "//button[@data-ui-name=\"button_search_submit\"]")]
+        private IWebElement flightSearchbutton;
+
+
+
+
         /*Method for Elements for the From selection*/
         public IWebElement getjrnyType()
         {
@@ -86,6 +103,29 @@ namespace DDTspecflow.PageObjects
         public IList<IWebElement> getflighToSugsttList()
         {
             return flighToSugsttList;
+        }
+
+        /*Method Elements for the Date selection*/
+        public IWebElement getflighDateClick()
+        {
+            return flighDateClick;
+        }
+        public IWebElement getflighDateNxtMenu()
+        {
+            return flighDateNxtMenu;
+        }
+        public IList<IWebElement> getflighDateMenu()
+        {
+            return flighDateMenu;
+        }
+        public IList<IWebElement> getflighDatePick()
+        {
+            return flighDatePick;
+        }
+        /*Method Elements for the search selection*/
+        public IWebElement getflightSearchbutton()
+        {
+            return flightSearchbutton;
         }
 
     }

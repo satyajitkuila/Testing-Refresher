@@ -1,6 +1,9 @@
 using DDTspecflow.Drivers;
 using DDTspecflow.PageObjects;
+using FluentAssertions.Equivalency.Steps;
 using Microsoft.VisualBasic;
+using NUnit.Framework;
+using NUnit.Framework.Internal;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -15,8 +18,9 @@ namespace DDTspecflow.StepDefinitions
     {
         booking_HomePage bmp = new booking_HomePage(getDriver());
         booking_FlightPage bfp =new booking_FlightPage(getDriver());
+        booking_FlightSelectionPage bfsp =new booking_FlightSelectionPage(getDriver());
 
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8));
+        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
         [Given(@"user is on the home page with (.*) given\.")]
         public void GivenUserIsOnTheHomePageWithUrlGiven_(String Url)
@@ -85,7 +89,7 @@ namespace DDTspecflow.StepDefinitions
                 bfp.getflighFromInput().SendKeys(fromDest);
                 Thread.Sleep(1000);
                 IList<IWebElement> listSuggst = bfp.getflighFromSugsttList();
-                Console.WriteLine("loading 3");
+                
 
                 foreach (IWebElement suggst in listSuggst)
                 {
@@ -129,19 +133,78 @@ namespace DDTspecflow.StepDefinitions
         [Then(@"user provides (.*) on the picker\.")]
         public void ThenUserProvidesOnThePicker_(string date)
         {
-            Console.WriteLine(date);
+            // Parse the input date string into a DateTime object
+            DateTime date1 = DateTime.Parse(date);
+
+            string monthString = date1.ToString("MMMM");
+
+            // Format the date into the desired format: "10 July 2024"
+            string formattedDate = date1.ToString("yyyy-MM-dd");
+            Console.WriteLine(formattedDate);
+
+            bfp.getflighDateClick().Click();
+            Thread.Sleep(1000);
+            IList<IWebElement> MnthMenu= bfp.getflighDateMenu();
+            Thread.Sleep(1000);
+            foreach (IWebElement month in MnthMenu)
+            {
+                if (month.Text.Contains(monthString))
+                {
+                    IList<IWebElement> datePick= bfp.getflighDatePick();
+                    Thread.Sleep(1000);
+                    foreach (IWebElement item in datePick)
+                    {
+                       
+                        if (item.GetAttribute("data-date").Contains(formattedDate))
+                        {
+                            item.Click();
+                            break;
+                        }
+                        
+                    }
+                    break;
+                }
+                else
+                {
+                    bfp.getflighDateNxtMenu().Click();
+                    Thread.Sleep(1000);
+                }
+            }
+           
         }
 
         [Then(@"User click on Search buttton\.")]
         public void ThenUserClickOnSearchButtton_()
         {
-            Console.WriteLine("click");
+            Thread.Sleep(1000);
+            bfp.getflightSearchbutton().Click();
         }
 
         [Then(@"User is shown Flight resultz to choose from\.")]
         public void ThenUserIsShownFlightResultzToChooseFrom_()
         {
-            Console.WriteLine("rslt");
+
+            // Find the element you want to check visibility for
+            IWebElement element = bfsp.getsearch_tabs_BEST();
+            wait.Until(ExpectedConditions.ElementToBeClickable(element));//chnge it to a method
+
+            // Assert if the element is visible
+            Assert.IsTrue(element.Displayed, "Element is not visible on the page.");
+            Thread.Sleep(1000);
+
+            IList <IWebElement> flights=bfsp.getflightCards();
+
+            foreach (IWebElement flight in flights)
+            {
+                Console.WriteLine(flight.Text);
+                
+                
+                if (flight.Text.Contains("IndiGo"))
+                {
+                    
+                    bfsp.getclickViewDetails().Click();
+                }
+            }
         }
 
     }
