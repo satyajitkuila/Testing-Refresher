@@ -96,7 +96,7 @@ namespace DDTspecflow.StepDefinitions
                     if (suggst.Text.Contains(fromDest))
                     {
                         suggst.Click();
-                        Console.WriteLine($"from field slected {fromDest}");
+                        Console.WriteLine($"from field selected {fromDest}");
                         break;
                     }
                     else
